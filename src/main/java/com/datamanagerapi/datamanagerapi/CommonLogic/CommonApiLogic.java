@@ -13,11 +13,10 @@ import java.util.Base64;
 
 @Slf4j
 public class CommonApiLogic {
-    @Value("${secretKey}")
-    public String secretKey;
 
 
-    public String HashUserPassword(String stringToHash)
+
+    public String HashUserPassword(String stringToHash,String secretKey)
     {
         String result = "";
         try
@@ -30,6 +29,7 @@ public class CommonApiLogic {
 
             // Base64 encode it and return the string equivalent
             result = Base64.getEncoder().encodeToString(macData);
+            log.info("Hashed password: "+result);
         }
         catch (Exception exception)
         {
