@@ -19,5 +19,5 @@ other account details.
 
  # Question 2
  1. Stored procedures have been to retrieve data from related tables  inorder to reduce on the traffic between the api and the db.
-    Instead of sending multiple lengthy SQL statements,the api only sends sends the name and parameters of the storedure
+    Instead of sending multiple lengthy SQL statements,the api only sends sends the name and parameters of the stored procedure
 	and details are retrieved once found.
