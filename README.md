@@ -18,3 +18,6 @@ other account details.
 10. A vendor creates a bank staff who is responsible for creating customer accounts
 
  # Question 2
+ 1. Stored procedures have been to retrieve data from related tables  inorder to reduce on the traffic between the api and the db.
+    Instead of sending multiple lengthy SQL statements,the api only sends sends the name and parameters of the storedure
+	and details are retrieved once found.
