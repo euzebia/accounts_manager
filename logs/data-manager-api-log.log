@@ -550,3 +550,389 @@ Caused by: java.lang.IllegalArgumentException: Not a managed type: class com.dat
 2023-08-01 09:39:26.325  INFO 36988 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-08-01 09:39:26.328  INFO 36988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-08-01 09:39:26.420  INFO 36988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 09:47:40.011  INFO 21008 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 21008 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 09:47:40.021  INFO 21008 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 09:47:43.383  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 09:47:43.385  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 09:47:43.464  INFO 21008 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 09:47:43.466  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 0 JDBC repository interfaces.
+2023-08-01 09:47:43.492  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 09:47:43.493  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 09:47:43.596  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interfaces.
+2023-08-01 09:47:45.257  INFO 21008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 09:47:45.275  INFO 21008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 09:47:45.275  INFO 21008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 09:47:45.571  INFO 21008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 09:47:45.571  INFO 21008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5406 ms
+2023-08-01 09:47:45.799  INFO 21008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 09:47:46.095  INFO 21008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 09:47:46.183  INFO 21008 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 09:47:46.348  INFO 21008 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 09:47:46.728  INFO 21008 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 09:47:46.989  INFO 21008 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 09:47:48.232  INFO 21008 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 09:47:48.251  INFO 21008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 09:47:48.947  WARN 21008 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 09:47:50.564  INFO 21008 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 09:47:50.718  INFO 21008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 09:47:51.167  INFO 21008 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 12.861 seconds (JVM running for 21.325)
+2023-08-01 09:48:08.799  INFO 21008 --- [http-nio-8006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 09:48:08.800  INFO 21008 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 09:48:08.803  INFO 21008 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-08-01 09:48:09.678  WARN 21008 --- [http-nio-8006-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [134] milliseconds.
+2023-08-01 09:48:09.948  INFO 21008 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 09:48:10.104  INFO 21008 --- [http-nio-8006-exec-2] c.d.d.DataAccessObjects.DataAccessImpl   : Error on account details retrieval: Incorrect result size: expected 1, actual 0
+2023-08-01 09:48:15.059  INFO 21008 --- [http-nio-8006-exec-4] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 09:48:15.062  INFO 21008 --- [http-nio-8006-exec-4] c.d.d.DataAccessObjects.DataAccessImpl   : Error on account details retrieval: Incorrect result size: expected 1, actual 0
+2023-08-01 09:48:16.322  INFO 21008 --- [http-nio-8006-exec-6] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 09:48:16.335  INFO 21008 --- [http-nio-8006-exec-6] c.d.d.DataAccessObjects.DataAccessImpl   : Error on account details retrieval: Incorrect result size: expected 1, actual 0
+2023-08-01 09:48:25.233  INFO 21008 --- [http-nio-8006-exec-7] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 09:48:25.286  INFO 21008 --- [http-nio-8006-exec-7] c.d.d.services.DataManagerService        : Reached here
+2023-08-01 09:48:25.471 DEBUG 21008 --- [http-nio-8006-exec-7] org.hibernate.SQL                        : {call GetSystemUserDetails(?, ?)}
+2023-08-01 10:07:40.505  INFO 21008 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 10:07:40.538  INFO 21008 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 10:07:40.587  INFO 21008 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 11:33:37.186  INFO 36776 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 36776 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 11:33:37.196  INFO 36776 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 11:33:39.389  INFO 36776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 11:33:39.391  INFO 36776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 11:33:39.465  INFO 36776 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 11:33:39.467  INFO 36776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 0 JDBC repository interfaces.
+2023-08-01 11:33:39.486  INFO 36776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 11:33:39.486  INFO 36776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 11:33:39.571  INFO 36776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interfaces.
+2023-08-01 11:33:42.388  INFO 36776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 11:33:42.440  INFO 36776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 11:33:42.444  INFO 36776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 11:33:42.953  INFO 36776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 11:33:42.953  INFO 36776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5653 ms
+2023-08-01 11:33:43.492  INFO 36776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 11:33:45.559  INFO 36776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 11:33:45.961  INFO 36776 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 11:33:46.840  INFO 36776 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 11:33:51.144  INFO 36776 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 11:33:51.563  INFO 36776 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 11:33:54.130  INFO 36776 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 11:33:54.156  INFO 36776 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 11:33:54.867  WARN 36776 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 11:33:56.425  INFO 36776 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 11:33:56.564  INFO 36776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 11:33:56.907  INFO 36776 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 20.901 seconds (JVM running for 22.609)
+2023-08-01 11:34:01.527  INFO 36776 --- [http-nio-8006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 11:34:01.528  INFO 36776 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 11:34:01.531  INFO 36776 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-01 11:34:02.308  INFO 36776 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 11:34:02.438  INFO 36776 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Reached here
+2023-08-01 11:34:02.555 DEBUG 36776 --- [http-nio-8006-exec-2] org.hibernate.SQL                        : {call GetSystemUserDetails(?, ?)}
+2023-08-01 11:34:11.008  INFO 36776 --- [http-nio-8006-exec-4] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 11:34:11.015  INFO 36776 --- [http-nio-8006-exec-4] c.d.d.services.DataManagerService        : Reached here
+2023-08-01 11:34:11.016 DEBUG 36776 --- [http-nio-8006-exec-4] org.hibernate.SQL                        : {call GetSystemUserDetails(?, ?)}
+2023-08-01 11:36:00.862  INFO 36776 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 11:36:00.865  INFO 36776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 11:36:00.874  INFO 36776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 12:43:12.742  INFO 30956 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 30956 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 12:43:12.749  INFO 30956 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 12:43:14.920  INFO 30956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 12:43:14.922  INFO 30956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 12:43:14.999  INFO 30956 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 12:43:15.000  INFO 30956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 0 JDBC repository interfaces.
+2023-08-01 12:43:15.018  INFO 30956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 12:43:15.018  INFO 30956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 12:43:15.084  INFO 30956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 1 JPA repository interfaces.
+2023-08-01 12:43:16.188  INFO 30956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 12:43:16.200  INFO 30956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 12:43:16.200  INFO 30956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 12:43:16.365  INFO 30956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 12:43:16.365  INFO 30956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3492 ms
+2023-08-01 12:43:16.530  INFO 30956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 12:43:16.752  INFO 30956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 12:43:16.815  INFO 30956 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 12:43:16.903  INFO 30956 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 12:43:17.156  INFO 30956 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 12:43:17.330  INFO 30956 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 12:43:18.321  INFO 30956 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 12:43:18.337  INFO 30956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 12:44:15.109  WARN 30956 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 12:46:39.381  INFO 30956 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 12:46:40.930  INFO 30956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 12:46:41.432  INFO 30956 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 209.882 seconds (JVM running for 212.909)
+2023-08-01 12:46:41.500  INFO 30956 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 12:46:41.503  INFO 30956 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 12:46:41.521  INFO 30956 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 12:51:34.746  INFO 37792 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 37792 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 12:51:34.758  INFO 37792 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 12:51:37.048  INFO 37792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 12:51:37.049  INFO 37792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 12:51:37.157  INFO 37792 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 12:51:37.160  INFO 37792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 0 JDBC repository interfaces.
+2023-08-01 12:51:37.177  INFO 37792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 12:51:37.177  INFO 37792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 12:51:37.246  INFO 37792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 1 JPA repository interfaces.
+2023-08-01 12:51:38.724  INFO 37792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 12:51:38.743  INFO 37792 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 12:51:38.744  INFO 37792 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 12:51:38.974  INFO 37792 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 12:51:38.975  INFO 37792 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4079 ms
+2023-08-01 12:51:39.354  INFO 37792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 12:51:39.738  INFO 37792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 12:51:39.895  INFO 37792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 12:51:40.049  INFO 37792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 12:51:40.472  INFO 37792 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 12:51:40.776  INFO 37792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 12:51:41.772  INFO 37792 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 12:51:41.785  INFO 37792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 12:51:42.243  WARN 37792 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 12:51:43.342  INFO 37792 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 12:51:43.466  INFO 37792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 12:51:43.850  INFO 37792 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 10.623 seconds (JVM running for 12.318)
+2023-08-01 12:54:10.199  INFO 37792 --- [http-nio-8006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 12:54:10.199  INFO 37792 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 12:54:10.202  INFO 37792 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-08-01 12:54:10.960  WARN 37792 --- [http-nio-8006-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [107] milliseconds.
+2023-08-01 12:54:11.184  INFO 37792 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:11:41.214  INFO 37792 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:11:41.281  INFO 37792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 13:11:41.328  INFO 37792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 13:11:55.434  INFO 20112 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 20112 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 13:11:55.438  INFO 20112 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 13:11:56.910  INFO 20112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:11:56.911  INFO 20112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 13:11:56.947  INFO 20112 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 13:11:56.948  INFO 20112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 JDBC repository interfaces.
+2023-08-01 13:11:56.960  INFO 20112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:11:56.960  INFO 20112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 13:11:56.995  INFO 20112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interfaces.
+2023-08-01 13:11:57.748  INFO 20112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 13:11:57.761  INFO 20112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 13:11:57.762  INFO 20112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 13:11:57.938  INFO 20112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 13:11:57.939  INFO 20112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2436 ms
+2023-08-01 13:11:58.104  INFO 20112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 13:11:58.284  INFO 20112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 13:11:58.347  INFO 20112 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 13:11:58.457  INFO 20112 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 13:11:58.717  INFO 20112 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 13:11:58.917  INFO 20112 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 13:11:59.716  INFO 20112 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 13:11:59.728  INFO 20112 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:12:00.130  WARN 20112 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 13:12:01.051  INFO 20112 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 13:12:01.150  INFO 20112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 13:12:01.403  INFO 20112 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 6.583 seconds (JVM running for 7.744)
+2023-08-01 13:13:19.080  INFO 20112 --- [http-nio-8006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 13:13:19.080  INFO 20112 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 13:13:19.085  INFO 20112 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-08-01 13:13:19.768  INFO 20112 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:27:02.793  INFO 20112 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:27:02.804  INFO 20112 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 13:27:02.820  INFO 20112 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 13:27:56.027  INFO 27704 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 27704 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 13:27:56.030  INFO 27704 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 13:27:57.462  INFO 27704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:27:57.463  INFO 27704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 13:27:57.497  INFO 27704 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 13:27:57.499  INFO 27704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 JDBC repository interfaces.
+2023-08-01 13:27:57.511  INFO 27704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:27:57.511  INFO 27704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 13:27:57.555  INFO 27704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interfaces.
+2023-08-01 13:27:58.524  INFO 27704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 13:27:58.536  INFO 27704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 13:27:58.537  INFO 27704 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 13:27:58.702  INFO 27704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 13:27:58.703  INFO 27704 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2590 ms
+2023-08-01 13:27:58.870  INFO 27704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 13:27:59.066  INFO 27704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 13:27:59.126  INFO 27704 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 13:27:59.208  INFO 27704 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 13:27:59.425  INFO 27704 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 13:27:59.551  INFO 27704 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 13:28:00.250  INFO 27704 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 13:28:00.260  INFO 27704 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:28:00.636  WARN 27704 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 13:28:01.488  INFO 27704 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 13:28:01.571  INFO 27704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 13:28:01.793  INFO 27704 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 6.354 seconds (JVM running for 7.397)
+2023-08-01 13:28:25.982  INFO 27704 --- [http-nio-8006-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 13:28:25.982  INFO 27704 --- [http-nio-8006-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 13:28:25.984  INFO 27704 --- [http-nio-8006-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-01 13:28:26.414  INFO 27704 --- [http-nio-8006-exec-1] c.d.d.services.DataManagerService        : Error on creating bank staff :Cannot invoke "String.equals(Object)" because the return value of "com.datamanagerapi.datamanagerapi.Responses.RegistrationResponse.getMessage()" is null
+2023-08-01 13:28:27.932  INFO 27704 --- [http-nio-8006-exec-4] c.d.d.services.DataManagerService        : Error on creating bank staff :Cannot invoke "String.equals(Object)" because the return value of "com.datamanagerapi.datamanagerapi.Responses.RegistrationResponse.getMessage()" is null
+2023-08-01 13:29:48.364  INFO 27704 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:29:48.365  INFO 27704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 13:29:48.373  INFO 27704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 13:30:02.562  INFO 25940 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 25940 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 13:30:02.568  INFO 25940 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 13:30:03.967  INFO 25940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:30:03.968  INFO 25940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 13:30:04.006  INFO 25940 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 13:30:04.007  INFO 25940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 JDBC repository interfaces.
+2023-08-01 13:30:04.019  INFO 25940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:30:04.019  INFO 25940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 13:30:04.067  INFO 25940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interfaces.
+2023-08-01 13:30:05.052  INFO 25940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 13:30:05.070  INFO 25940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 13:30:05.071  INFO 25940 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 13:30:05.305  INFO 25940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 13:30:05.305  INFO 25940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2646 ms
+2023-08-01 13:30:05.548  INFO 25940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 13:30:05.740  INFO 25940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 13:30:05.807  INFO 25940 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 13:30:05.918  INFO 25940 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 13:30:06.218  INFO 25940 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 13:30:06.398  INFO 25940 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 13:30:07.227  INFO 25940 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 13:30:07.239  INFO 25940 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:31:19.696  WARN 25940 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 13:34:51.276  INFO 25940 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 13:35:03.019  INFO 25940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 13:35:27.212  INFO 25940 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 325.367 seconds (JVM running for 326.595)
+2023-08-01 13:41:10.625  INFO 25940 --- [http-nio-8006-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 13:41:10.630  INFO 25940 --- [http-nio-8006-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 13:41:11.013  INFO 25940 --- [http-nio-8006-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 379 ms
+2023-08-01 13:41:22.614  WARN 25940 --- [http-nio-8006-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [951] milliseconds.
+2023-08-01 13:42:53.382  WARN 25940 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m17s232ms292µs100ns).
+2023-08-01 13:44:59.785  WARN 25940 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m35s958ms738µs700ns).
+2023-08-01 13:44:59.790  INFO 25940 --- [http-nio-8006-exec-1] c.d.d.services.DataManagerService        : Error on creating bank staff :Cannot invoke "String.equals(Object)" because the return value of "com.datamanagerapi.datamanagerapi.Responses.RegistrationResponse.getMessage()" is null
+2023-08-01 13:44:59.934  INFO 25940 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:44:59.942  INFO 25940 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 13:44:59.956  INFO 25940 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 13:45:16.910  INFO 31752 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 31752 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 13:45:16.917  INFO 31752 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 13:45:18.422  INFO 31752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:45:18.422  INFO 31752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 13:45:18.461  INFO 31752 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 13:45:18.462  INFO 31752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 0 JDBC repository interfaces.
+2023-08-01 13:45:18.475  INFO 31752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:45:18.475  INFO 31752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 13:45:18.512  INFO 31752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interfaces.
+2023-08-01 13:45:19.297  INFO 31752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 13:45:19.306  INFO 31752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 13:45:19.306  INFO 31752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 13:45:19.455  INFO 31752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 13:45:19.456  INFO 31752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2451 ms
+2023-08-01 13:45:19.588  INFO 31752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 13:45:19.769  INFO 31752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 13:45:19.829  INFO 31752 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 13:45:19.911  INFO 31752 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 13:45:20.120  INFO 31752 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 13:45:20.278  INFO 31752 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 13:45:21.021  INFO 31752 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 13:45:21.035  INFO 31752 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:45:21.429  WARN 31752 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 13:45:22.413  INFO 31752 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 13:45:22.519  INFO 31752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 13:45:22.835  INFO 31752 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 6.827 seconds (JVM running for 8.16)
+2023-08-01 13:45:55.484  INFO 31752 --- [http-nio-8006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 13:45:55.484  INFO 31752 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 13:45:55.485  INFO 31752 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-01 13:46:33.496  INFO 31752 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:46:33.497  INFO 31752 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 13:46:33.503  INFO 31752 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 13:46:45.130  INFO 39524 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 39524 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 13:46:45.140  INFO 39524 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 13:46:47.197  INFO 39524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:46:47.202  INFO 39524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 13:46:47.258  INFO 39524 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 13:46:47.260  INFO 39524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 0 JDBC repository interfaces.
+2023-08-01 13:46:47.277  INFO 39524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 13:46:47.277  INFO 39524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 13:46:47.385  INFO 39524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 1 JPA repository interfaces.
+2023-08-01 13:46:48.434  INFO 39524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 13:46:48.443  INFO 39524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 13:46:48.443  INFO 39524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 13:46:48.571  INFO 39524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 13:46:48.571  INFO 39524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3306 ms
+2023-08-01 13:46:48.692  INFO 39524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 13:46:48.845  INFO 39524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 13:46:48.895  INFO 39524 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 13:46:48.950  INFO 39524 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 13:46:49.126  INFO 39524 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 13:46:49.244  INFO 39524 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 13:46:49.935  INFO 39524 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 13:46:49.949  INFO 39524 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 13:46:50.344  WARN 39524 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 13:46:51.239  INFO 39524 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 13:46:51.330  INFO 39524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 13:46:51.608  INFO 39524 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 8.105 seconds (JVM running for 9.591)
+2023-08-01 13:47:27.193  INFO 39524 --- [http-nio-8006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 13:47:27.193  INFO 39524 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 13:47:27.196  INFO 39524 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-01 13:47:27.661  INFO 39524 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:47:29.361  INFO 39524 --- [http-nio-8006-exec-4] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:47:30.473  INFO 39524 --- [http-nio-8006-exec-6] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:47:30.692  INFO 39524 --- [http-nio-8006-exec-8] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:47:38.728  INFO 39524 --- [http-nio-8006-exec-10] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:47:47.844  INFO 39524 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:48:21.097  INFO 39524 --- [http-nio-8006-exec-4] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 13:48:21.138  INFO 39524 --- [http-nio-8006-exec-4] c.d.d.DataAccessObjects.DataAccessImpl   : SQL Error on Method saveBankStaffInformation 1 Result consisted of more than one row
+2023-08-01 14:04:00.235  INFO 39524 --- [http-nio-8006-exec-6] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 14:04:01.719  INFO 39524 --- [http-nio-8006-exec-7] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 14:10:43.186  INFO 39524 --- [http-nio-8006-exec-9] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 14:10:44.596  INFO 39524 --- [http-nio-8006-exec-1] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 14:25:39.941  INFO 39524 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 14:25:39.983  INFO 39524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 14:25:39.993  INFO 39524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 14:25:59.195  INFO 36188 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 36188 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 14:25:59.199  INFO 36188 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 14:26:00.694  INFO 36188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 14:26:00.695  INFO 36188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 14:26:00.731  INFO 36188 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 14:26:00.732  INFO 36188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JDBC repository interfaces.
+2023-08-01 14:26:00.744  INFO 36188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 14:26:00.745  INFO 36188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 14:26:00.791  INFO 36188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2023-08-01 14:26:02.295  INFO 36188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 14:26:02.317  INFO 36188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 14:26:02.317  INFO 36188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 14:26:02.666  INFO 36188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 14:26:02.667  INFO 36188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3381 ms
+2023-08-01 14:26:02.999  INFO 36188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 14:26:03.380  INFO 36188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 14:26:03.520  INFO 36188 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 14:26:03.677  INFO 36188 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 14:26:04.166  INFO 36188 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 14:26:04.420  INFO 36188 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 14:26:05.335  INFO 36188 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 14:26:05.363  INFO 36188 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 14:27:07.192  WARN 36188 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 14:27:34.277  INFO 36188 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 14:27:34.393  INFO 36188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 14:27:34.678  INFO 36188 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 96.566 seconds (JVM running for 99.435)
+2023-08-01 14:27:34.720  INFO 36188 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 14:27:34.722  INFO 36188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 14:27:34.730  INFO 36188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-01 14:27:41.971  INFO 7116 --- [main] c.d.d.DatamanagerapiApplication          : Starting DatamanagerapiApplication using Java 17.0.2 on PC-IT-10 with PID 7116 (E:\Personal\Projects\isw-new\api\accounts_manager\build\classes\java\main started by PIVOT PAY in E:\Personal\Projects\isw-new\api\accounts_manager)
+2023-08-01 14:27:41.974  INFO 7116 --- [main] c.d.d.DatamanagerapiApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-08-01 14:27:42.997  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 14:27:42.997  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-08-01 14:27:43.023  INFO 7116 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-08-01 14:27:43.024  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
+2023-08-01 14:27:43.033  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-01 14:27:43.033  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-01 14:27:43.062  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interfaces.
+2023-08-01 14:27:43.687  INFO 7116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8006 (http)
+2023-08-01 14:27:43.694  INFO 7116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-01 14:27:43.694  INFO 7116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-01 14:27:43.809  INFO 7116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-01 14:27:43.809  INFO 7116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1782 ms
+2023-08-01 14:27:43.913  INFO 7116 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-01 14:27:44.037  INFO 7116 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-01 14:27:44.078  INFO 7116 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-01 14:27:44.127  INFO 7116 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-08-01 14:27:44.313  INFO 7116 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-01 14:27:44.441  INFO 7116 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-08-01 14:27:45.001  INFO 7116 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-01 14:27:45.011  INFO 7116 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 14:27:45.339  WARN 7116 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-01 14:27:46.202  INFO 7116 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-01 14:27:46.278  INFO 7116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8006 (http) with context path ''
+2023-08-01 14:27:46.747  INFO 7116 --- [main] c.d.d.DatamanagerapiApplication          : Started DatamanagerapiApplication in 5.271 seconds (JVM running for 6.117)
+2023-08-01 14:32:37.615  INFO 7116 --- [http-nio-8006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-01 14:32:37.615  INFO 7116 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-01 14:32:37.617  INFO 7116 --- [http-nio-8006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-01 14:32:37.950  INFO 7116 --- [http-nio-8006-exec-2] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 14:32:41.115  INFO 7116 --- [http-nio-8006-exec-3] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 14:32:48.812  INFO 7116 --- [http-nio-8006-exec-6] c.d.d.services.DataManagerService        : Hashed password: SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==
+2023-08-01 14:33:54.257  INFO 7116 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-01 14:33:54.259  INFO 7116 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-01 14:33:54.268  INFO 7116 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

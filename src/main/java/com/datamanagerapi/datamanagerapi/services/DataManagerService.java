@@ -1,11 +1,14 @@
 package com.datamanagerapi.datamanagerapi.services;
 
+import com.datamanagerapi.datamanagerapi.CommonLogic.CommonApiLogic;
 import com.datamanagerapi.datamanagerapi.DataAccessObjects.DataAccess;
 import com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository;
 import com.datamanagerapi.datamanagerapi.Models.Account;
 import com.datamanagerapi.datamanagerapi.Models.SystemUserDetails;
 import com.datamanagerapi.datamanagerapi.Requests.LoginRequest;
+import com.datamanagerapi.datamanagerapi.Requests.RegistrationRequest;
 import com.datamanagerapi.datamanagerapi.Responses.LoginResponse;
+import com.datamanagerapi.datamanagerapi.Responses.RegistrationResponse;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,7 @@ public class DataManagerService
     DataAccess dataAccess;
     @Autowired
     SystemUserDetailsRepository systemUserDetailsRepository;
+    CommonApiLogic commonApiLogic = new CommonApiLogic();
     public LoginResponse verifyLoginCredentials(LoginRequest loginRequest)
     {
         LoginResponse response = new LoginResponse();
@@ -94,7 +98,6 @@ public class DataManagerService
                 response.setStatus("FAILED");
                 response.setMessage("Failure encountered on logon,try again");
                 return response;
-
             }
         }
         catch(Exception exception)
@@ -126,5 +129,169 @@ public class DataManagerService
             log.info("Error on hashing password: ".concat(exception.getMessage()));
         }
         return result;
+    }
+
+    public RegistrationResponse registerBankStaff(RegistrationRequest registrationRequest)
+    {
+        RegistrationResponse registrationResponse = new RegistrationResponse();
+        try
+        {
+           RegistrationResponse response = isValidReqistrationRequest(registrationRequest);
+           if(response.getStatus().equals("SUCCESS"))
+           {
+               String hashedPass = HashUserPassword(registrationRequest.getPassword(),secretKey);
+
+               registrationRequest.setPassword(hashedPass);
+               String status = dataAccess.saveBankStaffInformation(registrationRequest);
+               if(status==null || status.length()<1)
+               {
+                   registrationResponse.setStatus("FAILED");
+                   registrationResponse.setMessage("Unable to save user details,please try again");
+                   return registrationResponse;
+               }
+               if(status != null && status.equals("DUPLICATE EMAIL"))
+               {
+                   registrationResponse.setStatus("FAILED");
+                   registrationResponse.setMessage("Duplicate,There is an account already attached to supplied email");
+                   return registrationResponse;
+               }
+               if(status != null && status.equals("DUPLICATE USERNAME"))
+               {
+                   registrationResponse.setStatus("FAILED");
+                   registrationResponse.setMessage("Duplicate,Username already taken,choose a different one");
+                   return registrationResponse;
+               }
+               if(status != null && status.equals("SUCCESS"))
+               {
+                   registrationResponse.setStatus("SUCCESS");
+                   registrationResponse.setMessage("User details have been saved successfully");
+                   return registrationResponse;
+               }
+               return registrationResponse;
+           }
+           else
+           {
+               return response;
+           }
+        }
+        catch(Exception exception)
+        {
+            log.info("Error on creating bank staff :".concat(exception.getMessage()));
+            registrationResponse.setStatus("FAILED");
+            registrationResponse.setMessage("An error ocurred on creating user,please try again");
+            return registrationResponse;
+        }
+    }
+
+    public RegistrationResponse isValidReqistrationRequest(RegistrationRequest registrationRequest)
+    {
+        RegistrationResponse registrationResponse = new RegistrationResponse();
+        try
+        {
+            if(registrationRequest == null)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("Registration request can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getEmail()==null || registrationRequest.getEmail().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("Email field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getEmail()!=null )
+            {
+                if(commonApiLogic.validateEmail(registrationRequest.getEmail())==false)
+                {
+
+                    registrationResponse.setStatus("FAILED");
+                    registrationResponse.setMessage("Invalid email supplied");
+                    return registrationResponse;
+                }
+            }
+            if(registrationRequest.getPassword()==null || registrationRequest.getPassword().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("Password field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getUserName()==null || registrationRequest.getUserName().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("UserName field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getFirstName()==null || registrationRequest.getFirstName().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("First Name field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getLastName()==null || registrationRequest.getLastName().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("Last Name field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getRoleCode()==null || registrationRequest.getRoleCode().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("Role field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getCreatedBy()==null || registrationRequest.getCreatedBy().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("CreatedBy field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getBranchId()==null || registrationRequest.getBranchId().length()<1)
+            {
+                registrationResponse.setStatus("FAILED");
+                registrationResponse.setMessage("Branch field can not be empty");
+                return registrationResponse;
+            }
+            if(registrationRequest.getBranchId().length()>0)
+            {
+                boolean isValidInteger = commonApiLogic.isValidNumber(registrationRequest.getBranchId());
+                if(isValidInteger== false)
+                {
+                    registrationResponse.setStatus("FAILED");
+                    registrationResponse.setMessage("Invalid Branch Id supplied,should be integer");
+                    return registrationResponse;
+                }
+            }
+            if(registrationRequest.getRoleCode().length()>0)
+            {
+                boolean isValidInteger = commonApiLogic.isValidNumber(registrationRequest.getRoleCode());
+                if(isValidInteger== false)
+                {
+                    registrationResponse.setStatus("FAILED");
+                    registrationResponse.setMessage("Invalid Role Id supplied,should be integer");
+                    return registrationResponse;
+                }
+            }
+            if(registrationRequest.getCreatedBy().length()>0)
+            {
+                boolean isValidInteger = commonApiLogic.isValidNumber(registrationRequest.getCreatedBy());
+                if(isValidInteger== false)
+                {
+                    registrationResponse.setStatus("FAILED");
+                    registrationResponse.setMessage("Invalid CreatedBy Id supplied,should be integer");
+                    return registrationResponse;
+                }
+            }
+            registrationResponse.setStatus("SUCCESS");
+            registrationResponse.setMessage("Request is valid");
+            return registrationResponse;
+        }
+        catch (Exception exception)
+        {
+           log.info("Error on validating request Method isValidReqistrationRequest ".concat(exception.getMessage()));
+            registrationResponse.setStatus("FAILED");
+            registrationResponse.setMessage("An error ocurred on verifying request,please try again");
+            return registrationResponse;
+        }
     }
 }

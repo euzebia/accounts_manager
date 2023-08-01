@@ -10,31 +10,27 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Slf4j
 public class CommonApiLogic {
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
-
-
-    public String HashUserPassword(String stringToHash,String secretKey)
-    {
-        String result = "";
+    public static boolean validateEmail(String emailStr) {
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
+        return matcher.matches();
+    }
+    public static boolean isValidNumber(String userInput){
         try
         {
-            final byte[] byteKey = secretKey.getBytes(StandardCharsets.UTF_8);
-            Mac sha512Hmac = Mac.getInstance("HmacSHA512");
-            SecretKeySpec keySpec = new SecretKeySpec(byteKey, "HmacSHA512");
-            sha512Hmac.init(keySpec);
-            byte[] macData = sha512Hmac.doFinal(stringToHash.getBytes(StandardCharsets.UTF_8));
-
-            // Base64 encode it and return the string equivalent
-            result = Base64.getEncoder().encodeToString(macData);
-            log.info("Hashed password: "+result);
+            int value = Integer.parseInt(userInput.replace(",",""));
+            return true;
         }
-        catch (Exception exception)
+        catch (NumberFormatException exception)
         {
-            log.info("Error on hashing password: ".concat(exception.getMessage()));
+            return false;
         }
-        return result;
     }
 }

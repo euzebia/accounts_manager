@@ -25,3 +25,9 @@ other account details.
  1. Added validation checks on payloads to ensure valid parameters are passed to the apis.
  2. Added encryption of passwords before being stored in the database to prevent malicious users from access plain user passwords 
     while they are at rest in the database.
+ 3. Basic authentication has been added to the api to prevent unauthorized access.(username: api_user, password:t5p4krGSJyil2hWB)
+ 4. Added exception handling to capture any exceptions that could be encountered during execution and a custom error is being returned to the user
+    instead of the actual exception.
+ 5. Added file logging to capture exceptions on execution, this will enable easy trouble shooting incase of system malfunctioning,
+    will be trouble shooting will check on the logs to determine exact cause of failure.
+ 6. Added api versioning to ensure stability,reliability and to	avoid disrupting system users.
