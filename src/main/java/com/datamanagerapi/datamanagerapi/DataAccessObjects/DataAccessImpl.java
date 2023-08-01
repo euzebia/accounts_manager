@@ -1,7 +1,6 @@
 package com.datamanagerapi.datamanagerapi.DataAccessObjects;
 
 import com.datamanagerapi.datamanagerapi.Models.Account;
-import com.datamanagerapi.datamanagerapi.Models.VendorDetails;
 import com.datamanagerapi.datamanagerapi.Requests.LoginRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

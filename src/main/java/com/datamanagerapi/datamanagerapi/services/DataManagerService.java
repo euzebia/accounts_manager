@@ -1,10 +1,9 @@
 package com.datamanagerapi.datamanagerapi.services;
 
 import com.datamanagerapi.datamanagerapi.DataAccessObjects.DataAccess;
-import com.datamanagerapi.datamanagerapi.DataAccessObjects.VendorRepository;
+import com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository;
 import com.datamanagerapi.datamanagerapi.Models.Account;
-import com.datamanagerapi.datamanagerapi.Models.BankUserDetails;
-import com.datamanagerapi.datamanagerapi.Models.VendorDetails;
+import com.datamanagerapi.datamanagerapi.Models.SystemUserDetails;
 import com.datamanagerapi.datamanagerapi.Requests.LoginRequest;
 import com.datamanagerapi.datamanagerapi.Responses.LoginResponse;
 import com.google.gson.Gson;
@@ -27,7 +26,7 @@ public class DataManagerService
     @Autowired
     DataAccess dataAccess;
     @Autowired
-    VendorRepository vendorRepository;
+    SystemUserDetailsRepository systemUserDetailsRepository;
     public LoginResponse verifyLoginCredentials(LoginRequest loginRequest)
     {
         LoginResponse response = new LoginResponse();
@@ -69,7 +68,7 @@ public class DataManagerService
 
                 // fetch other particulars attached to the account
 
-                VendorDetails vendorDetails = vendorRepository.GetVendorDetails(loginRequest.getUserName(), loginRequest.getPassword());
+                SystemUserDetails vendorDetails = systemUserDetailsRepository.GetSystemUserDetails(loginRequest.getUserName(), loginRequest.getPassword());
                 if(vendorDetails != null)
                 {
                     response.setAccountId(vendorDetails.getAccount_id()+"");
@@ -81,41 +80,6 @@ public class DataManagerService
                     response.setInstitutionType(vendorDetails.getInstitution_type());
                     response.setRoleCode(vendorDetails.getRole_code());
                     response.setUserName(vendorDetails.getUser_name());
-                    response.setStatus("SUCCESS");
-                    response.setMessage("Account exists");
-                    return response;
-                }
-
-                VendorDetails bankStaffDetails = vendorRepository.GetBankStaffDetails(loginRequest.getUserName(), loginRequest.getPassword());
-                 if(vendorDetails != null)
-                {
-                    response.setAccountId(bankStaffDetails.getAccount_id()+"");
-                    response.setEmailAddress(bankStaffDetails.getEmail_address());
-                    response.setFirstName(bankStaffDetails.getFirst_name());
-                    response.setLastName(bankStaffDetails.getLast_name());
-                    response.setInstitutionName(bankStaffDetails.getInstitution_name());
-                    response.setRoleName(bankStaffDetails.getRole_name());
-                    response.setInstitutionType(bankStaffDetails.getInstitution_type());
-                    response.setRoleCode(bankStaffDetails.getRole_code());
-                    response.setUserName(bankStaffDetails.getUser_name());
-                    response.setStatus("SUCCESS");
-                    response.setMessage("Account exists");
-                    return response;
-                }
-                VendorDetails customerDetails = vendorRepository.GetCustomerDetails(loginRequest.getUserName(), loginRequest.getPassword());
-                log.info("Results"+new Gson().toJson(vendorDetails));
-
-                if(vendorDetails != null)
-                {
-                    response.setAccountId(customerDetails.getAccount_id()+"");
-                    response.setEmailAddress(customerDetails.getEmail_address());
-                    response.setFirstName(customerDetails.getFirst_name());
-                    response.setLastName(customerDetails.getLast_name());
-                    response.setInstitutionName(customerDetails.getInstitution_name());
-                    response.setRoleName(customerDetails.getRole_name());
-                    response.setInstitutionType(customerDetails.getInstitution_type());
-                    response.setRoleCode(customerDetails.getRole_code());
-                    response.setUserName(customerDetails.getUser_name());
                     response.setStatus("SUCCESS");
                     response.setMessage("Account exists");
                     return response;

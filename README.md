@@ -16,8 +16,12 @@ other account details.
 8. Customers have been categoried according to customer category ie corporate and ordinary user.
 9. Institution bank has a branch attached to it.
 10. A vendor creates a bank staff who is responsible for creating customer accounts
-
- # Question 2
- 1. Stored procedures have been to retrieve data from related tables  inorder to reduce on the traffic between the api and the db.
+11. Stored procedures have been to retrieve data from related tables  inorder to reduce on the traffic between the api and the db.
     Instead of sending multiple lengthy SQL statements,the api only sends sends the name and parameters of the stored procedure
 	and details are retrieved once found.
+12. Database views have been used to group data related to the various user types 
+
+ # Question 2
+ 1. Added validation checks on payloads to ensure valid parameters are passed to the apis.
+ 2. Added encryption of passwords before being stored in the database to prevent malicious users from access plain user passwords 
+    while they are at rest in the database.
