@@ -86,5 +86,39 @@ public class DataAccessImpl implements  DataAccess {
             }
             return  status;
     }
+
+    public String saveBankCustomer(RegistrationRequest registrationRequest)
+    {
+        String status="";
+        try(Connection connection =jdbcTemplate.getDataSource().getConnection())
+        {
+            try(CallableStatement saveBankCustomer=connection.prepareCall("{ ? = call saveCustomerInfo(?,?,?,?,?,?,?,?)}")) {
+
+                saveBankCustomer.registerOutParameter(1, Types.VARCHAR);
+                saveBankCustomer.setString(2, registrationRequest.getFirstName());
+                saveBankCustomer.setString(3, registrationRequest.getLastName());
+                saveBankCustomer.setString(4, registrationRequest.getEmail());
+                saveBankCustomer.setString(5, registrationRequest.getUserName());
+                saveBankCustomer.setString(6, registrationRequest.getPassword());
+                saveBankCustomer.setInt(7, Integer.parseInt(registrationRequest.getRoleCode()));
+                saveBankCustomer.setInt(8, Integer.parseInt(registrationRequest.getBranchId()));
+                saveBankCustomer.setInt(9, Integer.parseInt(registrationRequest.getCreatedBy()));
+
+                saveBankCustomer.execute();
+                status = saveBankCustomer.getString(1);
+            }
+            catch (Exception exception)
+            {
+                log.info("SQL Error on Method saveBankCustomerInformation 1 ".concat(exception.getMessage()));
+                return status;
+            }
+        }
+        catch (Exception error)
+        {
+            log.info("SQL Error on Method saveBankCustomerInformation 2 ".concat(error.getMessage()));
+            return  status;
+        }
+        return  status;
+    }
 }
 

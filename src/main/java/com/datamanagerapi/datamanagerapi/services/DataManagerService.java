@@ -197,6 +197,57 @@ public class DataManagerService
         }
     }
 
+    public RegistrationResponse saveBankCustomer(RegistrationRequest registrationRequest)
+    {
+        RegistrationResponse registrationResponse = new RegistrationResponse();
+        try
+        {
+            RegistrationResponse response = isValidReqistrationRequest(registrationRequest);
+            if(response.getStatus().equals("SUCCESS"))
+            {
+                String hashedPass = HashUserPassword(registrationRequest.getPassword(),secretKey);
+
+                registrationRequest.setPassword(hashedPass);
+                String status = dataAccess.saveBankCustomer(registrationRequest);
+                if(status==null || status.length()<1)
+                {
+                    registrationResponse.setStatus("FAILED");
+                    registrationResponse.setMessage("Unable to save user details,please try again");
+                    return registrationResponse;
+                }
+                if(status != null && status.equals("DUPLICATE EMAIL"))
+                {
+                    registrationResponse.setStatus("FAILED");
+                    registrationResponse.setMessage("Duplicate,There is an account already attached to supplied email");
+                    return registrationResponse;
+                }
+                if(status != null && status.equals("DUPLICATE USERNAME"))
+                {
+                    registrationResponse.setStatus("FAILED");
+                    registrationResponse.setMessage("Duplicate,Username already taken,choose a different one");
+                    return registrationResponse;
+                }
+                if(status != null && status.equals("SUCCESS"))
+                {
+                    registrationResponse.setStatus("SUCCESS");
+                    registrationResponse.setMessage("Bank customer details have been saved successfully");
+                    return registrationResponse;
+                }
+                return registrationResponse;
+            }
+            else
+            {
+                return response;
+            }
+        }
+        catch(Exception exception)
+        {
+            log.info("Error on creating bank customer :".concat(exception.getMessage()));
+            registrationResponse.setStatus("FAILED");
+            registrationResponse.setMessage("An error ocurred on creating user,please try again");
+            return registrationResponse;
+        }
+    }
     public RegistrationResponse isValidReqistrationRequest(RegistrationRequest registrationRequest)
     {
         RegistrationResponse registrationResponse = new RegistrationResponse();
@@ -336,41 +387,6 @@ public class DataManagerService
         }
     }
 
-    public void saveAllInstitionsToCache()
-    {
-//            List<Institution> institutions =  dataAccess.getAllInstitutions();
-//            institutionRepository.deleteAll();
-//            for(Institution item:institutions)
-//            {
-//                Institution institution = new Institution();
-//                institution.setInstitution_id(item.getInstitution_id());
-//                institution.setInstitution_name(item.getInstitution_name());
-//                institution.setInstitution_type(item.getInstitution_type());
-//                institutionRepository.save(institution);
-//            }
-    }
 
-  //  public List<Institution> getAllInstitutions()
-   // {
-//        List<Institution> institutionListFound = new ArrayList<>();
-//        try
-//        {
-//            Iterable<Institution> institutionsInCache = institutionRepository.findAll();
-//            if(institutionsInCache==null)
-//            {
-//                return dataAccess.getAllInstitutions();
-//            }
-//            else
-//            {
-//                institutionListFound = Lists.newArrayList(institutionsInCache);
-//            }
-//        }
-//        catch (Exception exception)
-//        {
-//            log.info("Error on retrieving institutions: ".concat(exception.getMessage()));
-//            return null;
-//        }
-       // return institutionListFound;
-    //}
 
 }

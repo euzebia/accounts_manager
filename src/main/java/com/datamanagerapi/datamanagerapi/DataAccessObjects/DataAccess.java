@@ -10,6 +10,7 @@ import java.util.List;
 public interface DataAccess {
     Account getAccountDetails(LoginRequest loginRequest);
     String saveBankStaffInformation(RegistrationRequest registrationRequest);
+    String saveBankCustomer(RegistrationRequest registrationRequest);
     List<Institution> getAllInstitutions();
 
 }

@@ -59,7 +59,23 @@ public class DataManagerController {
         {
             log.info("Error encountered on saving bank user info ".concat(exception.getMessage()));
             registrationResponse.setStatus("FAILED");
-            registrationResponse.setMessage("Failure occurred on account logon");
+            registrationResponse.setMessage("Failure occurred on saving bank staff details");
+            return registrationResponse;
+        }
+    }
+    @PostMapping(value="/saveBankCustomer")
+    public RegistrationResponse createBankCustomer(@RequestBody RegistrationRequest registrationRequest)
+    {
+        RegistrationResponse registrationResponse = new RegistrationResponse();
+        try
+        {
+            return  dataManagerService.saveBankCustomer(registrationRequest);
+        }
+        catch (Exception exception)
+        {
+            log.info("Error encountered on saveBankCustomer method ".concat(exception.getMessage()));
+            registrationResponse.setStatus("FAILED");
+            registrationResponse.setMessage("Failure occurred on saving bank customer details");
             return registrationResponse;
         }
     }

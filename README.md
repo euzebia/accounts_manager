@@ -1,7 +1,15 @@
-# Software name: accounts_manager
-<p>A real-world use case considered for implementation is an off-the-shelf software developed by a third party software vendor/system 
-owner that is used in banks to help bank staff(personal banker) create bank accounts,modifying accounts based on customer preferences and managing 
+# Software name: Accounts manager
+### About the software
+<p> Accounts manager is an application programming interface developed by a third party software vendor/system owner that is used in banks to help bank staff(personal banker) create customer accounts,modifying accounts based on customer preferences and managing 
 other account details.</p>
+
+#### Installation
+> #### Prerequisite
+> - Make sure you have java installed on your machine.If not yet installed,<br> you can download from [Java download site](https://www.oracle.com/)<p>
+> - If the java set up is complete, clone the solution from [account manager repository](https://github.com/euzebia/accounts_manager)
+
+#### Usage/Getting started
+
  
 # Question 1
   Brief description about the database design
@@ -41,6 +49,10 @@ other account details.</p>
     will be trouble shooting will check on the logs to determine exact cause of failure.
  6. Added api versioning to ensure stability,reliability and to	avoid disrupting system users.
  
+ 
+  Bank Customer
+  user name: pkikulwa
+  user password: H@ll809
 
  
  
