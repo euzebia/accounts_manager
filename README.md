@@ -6,9 +6,15 @@ other account details.</p>
 #### Installation
 > #### Prerequisite
 > - Make sure you have java installed on your machine.If not yet installed,<br> you can download from [Java download site](https://www.oracle.com/)<p>
-> - If the java set up is complete, clone the solution from [account manager repository](https://github.com/euzebia/accounts_manager)
+> - To confirm if java is successfully installed,use the command below;
+
+    ![Java](https://github.com/euzebia/accounts_manager/blob/main/src/main/resources/images/java_installed.JPG)
 
 #### Usage/Getting started
+>- To confi
+   ![]()
+>- If the java set up is complete, clone the solution from [account manager repository](https://github.com/euzebia/accounts_manager)
+
 
  
 # Question 1
