@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2023 at 04:04 AM
+-- Generation Time: Aug 03, 2023 at 10:30 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -59,6 +59,33 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `saveBankStaffDetails` (`firstName` V
    #END IF;
    END$$
 
+CREATE DEFINER=`root`@`localhost` FUNCTION `saveCustomerInfo` (`firstName` VARCHAR(100), `lastName` VARCHAR(100), `emailAddress` VARCHAR(100), `bankCustomerUserName` VARCHAR(100), `bankCustomerPassword` VARCHAR(100), `roleId` INT, `branchId` INT, `createdBy` INT) RETURNS VARCHAR(200) CHARSET latin1 DETERMINISTIC BEGIN
+    DECLARE counter integer;
+    DECLARE DuplicateUserNameExists integer;
+    declare newlyCreatedUserId integer;
+   
+    select COUNT(account_id) into DuplicateUserNameExists from account a  where user_name  = bankCustomerUserName;
+    IF DuplicateUserNameExists > 0 THEN
+       return ('DUPLICATE USERNAME');
+	
+    ELSE
+        select COUNT(account_id) into counter from account a  where email_address  = emailAddress;
+        IF counter >0 THEN
+          return ('DUPLICATE EMAIL');
+        END IF;
+	    insert into account (first_name,last_name,user_name,password,email_address)
+	    values(firstName,lastName,bankCustomerUserName,bankCustomerPassword,emailAddress);
+	      
+        select account_id into newlyCreatedUserId from account a  where email_address  = emailAddress;
+        IF(newlyCreatedUserId > 0) then
+         insert into customer (account_id,last_updated_by,role_id,customer_type)
+                        values(newlyCreatedUserId,createdBy,roleId,'ordinary');
+              return ('SUCCESS');
+        END IF;
+    END IF;
+   #END IF;
+   END$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -86,10 +113,11 @@ INSERT INTO `account` (`account_id`, `first_name`, `last_name`, `user_name`, `pa
 (1, 'Test', 'Super User', 'admin', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'testadmin@gmail.com', '2023-07-31 18:22:31', 1),
 (2, 'Joyce', 'Nansubuga', 'jnansubuga', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'jnansubuga@gmail.com', '2023-07-31 23:15:15', 1),
 (3, 'John', 'Doe', 'jDoe', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'jdoe@gmail.com', '2023-07-31 23:16:13', 1),
-(4, 'Test', 'Personal Banker', 'test', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'testpersonalbanker@gmail.com', '2023-08-01 11:27:01', 1),
-(5, 'Test', 'Personal Banker', 'test2', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'testbanker2023@gmail.com', '2023-08-01 11:32:08', 1),
-(6, 'Test', 'Personal Banker', 'test1', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'joyce.euzebia@gmail.com', '2023-08-01 13:47:38', 1),
-(15, 'Test', 'Personal Banker', 'test111', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'joyc66@gmail.com', '2023-08-01 14:32:48', 1);
+(4, 'Veronica', 'Namubiru', 'veronica', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'testpersonalbanker@gmail.com', '2023-08-01 11:27:01', 1),
+(5, 'Regina', 'Nakanyike', 'regina', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'testbanker2023@gmail.com', '2023-08-01 11:32:08', 1),
+(6, 'Resty', 'Ishibare', 'resty', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'resty.ishibare@gmail.com', '2023-08-01 13:47:38', 1),
+(15, 'Zoe', 'Ayebare', 'zoe', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'joyc66@gmail.com', '2023-08-01 14:32:48', 1),
+(18, 'Paul', 'Kikulwa', 'pkikulwa', 'Fe4HVeqF27TTk1bqEqKMJT0tJaRcyUBmEfL2s/+RcEdesW/VqyY/bml+IKpGWpywRpIcSk+sTLcY/OY7ZD+j4A==', 'pkikulwa@gmail.com', '2023-08-03 08:34:40', 1);
 
 -- --------------------------------------------------------
 
@@ -160,7 +188,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `customer_type`, `role_id`, `account_id`, `creation_date`, `last_updated_on`, `last_updated_by`) VALUES
-(1, 'corporate', 3, 3, '2023-07-31 23:38:47', NULL, 2);
+(1, 'corporate', 3, 3, '2023-07-31 23:38:47', NULL, 2),
+(2, 'ordinary', 3, 18, '2023-08-03 08:34:40', NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -422,7 +451,7 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `bank_staff`
@@ -440,7 +469,7 @@ ALTER TABLE `branch`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `institution`
