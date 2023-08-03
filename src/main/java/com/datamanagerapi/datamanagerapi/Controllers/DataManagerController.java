@@ -22,6 +22,7 @@ import java.util.List;
 @Slf4j
 @RequestMapping(value="/api/v1/accountsManagement")
 public class DataManagerController {
+
     @Value("${secretKey}")
     public String secretKey;
     @Autowired

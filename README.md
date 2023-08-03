@@ -1,3 +1,4 @@
+
 # Software name: Accounts manager
 ### About the software
 <p> Accounts manager is an application programming interface developed by a third party software vendor/system owner that is used in banks to help bank staff(personal banker) create customer accounts,modifying accounts based on customer preferences and managing 
@@ -7,6 +8,10 @@ other account details.</p>
 
 #### Installation
 > #### Prerequisite
+> - Ensure you have php and mysql installed,the software uses;
+    <p>mysql version 5.1.3</p>
+    <p>PHP Version: 7.4.28</p>
+>- Once the above step is done,navigate to ....\accounts_manager\src\main\resources  and import data_manager.sql into mysql. It is the database containing oour test data.
 > - Make sure you have java installed on your machine.If not yet installed,<br> you can download from [Java download site](https://www.oracle.com/)<p>
 > - To confirm if java is successfully installed,use the command below;
 
@@ -43,6 +48,7 @@ other account details.</p>
 >- Paste java -jar "your system path where the .jar file is located"
 >- Press enter for the application to start
 
+
 #### Some of the Test cases to be performed are as below;
 >- Add new bank staff to the system
 >- New bank staff logs into the system from same central point like other users of the system
@@ -54,5 +60,3 @@ other account details.</p>
   
 #### Design explanation and evidence
 >- A document describing the architecture ,assumptions and proof of working functionality    can be accessed on [Design,Assumptions and Evidences](https://github.com/euzebia/accounts_manager/blob/main/ProjectDescriptAndEvidence.docx)
-
-

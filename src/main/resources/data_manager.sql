@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2023 at 10:30 AM
+-- Generation Time: Aug 03, 2023 at 03:20 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -117,7 +117,8 @@ INSERT INTO `account` (`account_id`, `first_name`, `last_name`, `user_name`, `pa
 (5, 'Regina', 'Nakanyike', 'regina', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'testbanker2023@gmail.com', '2023-08-01 11:32:08', 1),
 (6, 'Resty', 'Ishibare', 'resty', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'resty.ishibare@gmail.com', '2023-08-01 13:47:38', 1),
 (15, 'Zoe', 'Ayebare', 'zoe', 'SMPwNSich95pyLgQszlQtcyZThKfaL61SplfAtIO5rM9AUPox38JNeWWmCmJbRwa0wnRxmFlJLWSUqmRwAYlJQ==', 'joyc66@gmail.com', '2023-08-01 14:32:48', 1),
-(18, 'Paul', 'Kikulwa', 'pkikulwa', 'Fe4HVeqF27TTk1bqEqKMJT0tJaRcyUBmEfL2s/+RcEdesW/VqyY/bml+IKpGWpywRpIcSk+sTLcY/OY7ZD+j4A==', 'pkikulwa@gmail.com', '2023-08-03 08:34:40', 1);
+(18, 'Paul', 'Kikulwa', 'pkikulwa', 'Fe4HVeqF27TTk1bqEqKMJT0tJaRcyUBmEfL2s/+RcEdesW/VqyY/bml+IKpGWpywRpIcSk+sTLcY/OY7ZD+j4A==', 'pkikulwa@gmail.com', '2023-08-03 08:34:40', 1),
+(19, 'Tabitha', 'Abaasa', 'test111', '5q3OytYzJI2GgWr9HccViud9Nv68bi5FLgd+lAq33LB3CqmwmO9puM8HDiiNsl6QhcLu3T28CZ0o+XFDI6D9Aw==', 't.abaasa@gmail.com', '2023-08-03 13:43:55', 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +145,8 @@ INSERT INTO `bank_staff` (`bank_staff_id`, `account_id`, `address`, `branch_id`,
 (3, 4, NULL, 1, 1, 0, 2),
 (4, 5, NULL, 1, 1, 0, 2),
 (5, 6, NULL, 1, 1, 0, 2),
-(6, 15, NULL, 1, 1, 0, 2);
+(6, 15, NULL, 1, 1, 0, 2),
+(7, 19, NULL, 1, 1, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -451,13 +453,13 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `bank_staff`
 --
 ALTER TABLE `bank_staff`
-  MODIFY `bank_staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `bank_staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `branch`
