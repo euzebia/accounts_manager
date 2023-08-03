@@ -1,6 +1,7 @@
 package com.datamanagerapi.datamanagerapi.DataAccessObjects;
 
 import com.datamanagerapi.datamanagerapi.Models.Account;
+import com.datamanagerapi.datamanagerapi.Models.Institution;
 import com.datamanagerapi.datamanagerapi.Requests.LoginRequest;
 import com.datamanagerapi.datamanagerapi.Requests.RegistrationRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Repository;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 @Slf4j
@@ -34,6 +37,21 @@ public class DataAccessImpl implements  DataAccess {
         }
     }
 
+    public List<Institution> getAllInstitutions()
+    {
+        List<Institution> institutionList = new ArrayList<>();
+        try
+        {
+            String sql ="SELECT * from institution";
+            institutionList= jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(Institution.class));
+            return institutionList;
+        }
+        catch (Exception exception)
+        {
+            log.info("Failed to fetch institutions: ".concat(exception.getMessage()));
+           return null;
+        }
+    }
     public String saveBankStaffInformation(RegistrationRequest registrationRequest)
     {
 

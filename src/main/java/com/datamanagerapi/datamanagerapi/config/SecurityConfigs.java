@@ -12,11 +12,15 @@ public class SecurityConfigs extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+               http
                 .csrf().disable()
                 .authorizeRequests().anyRequest().authenticated()
                 .and()
                 .httpBasic();
+               http.headers()
+                .xssProtection()
+                .and()
+                .contentSecurityPolicy("script-src 'self'");
     }
 
     @Autowired

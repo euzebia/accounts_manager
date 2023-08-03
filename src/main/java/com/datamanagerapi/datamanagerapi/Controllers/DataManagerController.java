@@ -1,18 +1,22 @@
 package com.datamanagerapi.datamanagerapi.Controllers;
 
 import com.datamanagerapi.datamanagerapi.CommonLogic.CommonApiLogic;
+import com.datamanagerapi.datamanagerapi.DataAccessObjects.InstitutionRepository;
+import com.datamanagerapi.datamanagerapi.Models.Institution;
 import com.datamanagerapi.datamanagerapi.Requests.LoginRequest;
 import com.datamanagerapi.datamanagerapi.Requests.RegistrationRequest;
 import com.datamanagerapi.datamanagerapi.Responses.LoginResponse;
 import com.datamanagerapi.datamanagerapi.Responses.RegistrationResponse;
 import com.datamanagerapi.datamanagerapi.services.DataManagerService;
+import com.datamanagerapi.datamanagerapi.services.OnlineEmailValidationService;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.Cacheable;
+
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -22,6 +26,10 @@ public class DataManagerController {
     public String secretKey;
     @Autowired
     DataManagerService dataManagerService;
+    @Autowired
+    OnlineEmailValidationService onlineEmailValidationService;
+    @Autowired
+    InstitutionRepository institutionRepository;
     @PostMapping(value="/login")
     public LoginResponse loginUser (@RequestBody LoginRequest loginRequest)
     {
@@ -54,6 +62,13 @@ public class DataManagerController {
             registrationResponse.setMessage("Failure occurred on account logon");
             return registrationResponse;
         }
-
     }
+
+    @GetMapping(value = "/allInstitutions")
+    @Cacheable("institution-cache")
+    public List<Institution> retrieveAllInstitutions()
+    {
+        return institutionRepository.findAll();
+    }
+
 }

@@ -9,6 +9,6 @@ import lombok.ToString;
 @ToString
 public class LoginResponse
 {
-    private String firstName,lastName,emailAddress,roleCode,institutionId,accountId,userName,creationDate,
-    institutionName,institutionType,roleName,roleId,status,message;
+    private String firstName,lastName,emailAddress,roleCode,accountId,userName,
+    institutionName,institutionType,roleName,status,message;
 }

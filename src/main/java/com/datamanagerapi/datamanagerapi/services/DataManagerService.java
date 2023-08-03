@@ -2,13 +2,17 @@ package com.datamanagerapi.datamanagerapi.services;
 
 import com.datamanagerapi.datamanagerapi.CommonLogic.CommonApiLogic;
 import com.datamanagerapi.datamanagerapi.DataAccessObjects.DataAccess;
+import com.datamanagerapi.datamanagerapi.DataAccessObjects.InstitutionRepository;
 import com.datamanagerapi.datamanagerapi.DataAccessObjects.SystemUserDetailsRepository;
 import com.datamanagerapi.datamanagerapi.Models.Account;
+import com.datamanagerapi.datamanagerapi.Models.Institution;
 import com.datamanagerapi.datamanagerapi.Models.SystemUserDetails;
 import com.datamanagerapi.datamanagerapi.Requests.LoginRequest;
 import com.datamanagerapi.datamanagerapi.Requests.RegistrationRequest;
 import com.datamanagerapi.datamanagerapi.Responses.LoginResponse;
+import com.datamanagerapi.datamanagerapi.Responses.OnlineEmailValidationResponse;
 import com.datamanagerapi.datamanagerapi.Responses.RegistrationResponse;
+import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +22,9 @@ import org.springframework.stereotype.Service;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -26,11 +32,19 @@ public class DataManagerService
 {
     @Value("${secretKey}")
     public String secretKey;
+    @Value("${OnlineEmailVerificationStatus}")
+    public String onlineEmailVerificationStatus;
+
+    @Value("${CIRCUIT_BREAKER_STATUS}")
+    public String circuitBreakerStatus;
     @Autowired
     DataAccess dataAccess;
     @Autowired
     SystemUserDetailsRepository systemUserDetailsRepository;
+
     CommonApiLogic commonApiLogic = new CommonApiLogic();
+    @Autowired
+    OnlineEmailValidationService result;
     public LoginResponse verifyLoginCredentials(LoginRequest loginRequest)
     {
         LoginResponse response = new LoginResponse();
@@ -200,14 +214,41 @@ public class DataManagerService
                 registrationResponse.setMessage("Email field can not be empty");
                 return registrationResponse;
             }
-            if(registrationRequest.getEmail()!=null )
+            if(registrationRequest.getEmail().length()>0 )
             {
-                if(commonApiLogic.validateEmail(registrationRequest.getEmail())==false)
+                //validate email online
+                if(onlineEmailVerificationStatus.equals("ON"))
                 {
+                    OnlineEmailValidationResponse emailStatus = new OnlineEmailValidationResponse();
+                    if(circuitBreakerStatus.equals("ON"))
+                    {
+                        // uses a circuit breaker
+                        emailStatus= result.validateEmailOnlineWithCircuitBreakerEnabled(registrationRequest.getEmail());
+                    }
+                    else
+                    {
+                        // uses rate limiting
+                         emailStatus = result.validateEmailOnline(registrationRequest.getEmail());
+                    }
 
-                    registrationResponse.setStatus("FAILED");
-                    registrationResponse.setMessage("Invalid email supplied");
-                    return registrationResponse;
+                    if(!emailStatus.getStatus().equals("SUCCESS"))
+                    {
+                        registrationResponse.setStatus("FAILED");
+                        registrationResponse.setMessage(emailStatus.getMessage());
+                        return registrationResponse;
+                    }
+
+                }
+                else
+                {
+                    // validate email offline
+                    if(commonApiLogic.validateEmail(registrationRequest.getEmail())==false)
+                    {
+                        registrationResponse.setStatus("FAILED");
+                        registrationResponse.setMessage("Invalid email supplied");
+                        return registrationResponse;
+                    }
+
                 }
             }
             if(registrationRequest.getPassword()==null || registrationRequest.getPassword().length()<1)
@@ -294,4 +335,42 @@ public class DataManagerService
             return registrationResponse;
         }
     }
+
+    public void saveAllInstitionsToCache()
+    {
+//            List<Institution> institutions =  dataAccess.getAllInstitutions();
+//            institutionRepository.deleteAll();
+//            for(Institution item:institutions)
+//            {
+//                Institution institution = new Institution();
+//                institution.setInstitution_id(item.getInstitution_id());
+//                institution.setInstitution_name(item.getInstitution_name());
+//                institution.setInstitution_type(item.getInstitution_type());
+//                institutionRepository.save(institution);
+//            }
+    }
+
+  //  public List<Institution> getAllInstitutions()
+   // {
+//        List<Institution> institutionListFound = new ArrayList<>();
+//        try
+//        {
+//            Iterable<Institution> institutionsInCache = institutionRepository.findAll();
+//            if(institutionsInCache==null)
+//            {
+//                return dataAccess.getAllInstitutions();
+//            }
+//            else
+//            {
+//                institutionListFound = Lists.newArrayList(institutionsInCache);
+//            }
+//        }
+//        catch (Exception exception)
+//        {
+//            log.info("Error on retrieving institutions: ".concat(exception.getMessage()));
+//            return null;
+//        }
+       // return institutionListFound;
+    //}
+
 }
