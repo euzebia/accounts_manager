@@ -1,7 +1,7 @@
 # Software name: accounts_manager
-A real-world use case considered for implementation is an off-the-shelf software developed by a third party software vendor/system 
+<p>A real-world use case considered for implementation is an off-the-shelf software developed by a third party software vendor/system 
 owner that is used in banks to help bank staff(personal banker) create bank accounts,modifying accounts based on customer preferences and managing 
-other account details.
+other account details.</p>
  
 # Question 1
   Brief description about the database design
