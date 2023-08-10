@@ -25,13 +25,13 @@ class DatamanagerapiApplicationTests {
    @Test
     public void userLoginTest()
     {
-      /*  String plainCredentials = "api_user:t5p4krGSJyil2hWB";
+      /* String plainCredentials = "api_user:t5p4krGSJyil2hWB";
         byte[] plainCredentialsBytes = plainCredentials.getBytes();
         byte[] base64CredentialsBytes = Base64.getEncoder().encode(plainCredentialsBytes);
         String base64Credentials = new String(base64CredentialsBytes);
 
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Authorization", "Basic " + base64Credentials);
+        /*httpHeaders.add("Authorization", "Basic " + base64Credentials);
         httpHeaders.add("Content-Type", "application/json");
         String url ="http://localhost:8006/api/v1/accountsManagement/login";
         LoginRequest loginRequest = new LoginRequest();

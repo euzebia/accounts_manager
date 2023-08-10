@@ -3,7 +3,7 @@ package com.datamanagerapi.datamanagerapi.Models;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.scheduling.annotation.EnableScheduling;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

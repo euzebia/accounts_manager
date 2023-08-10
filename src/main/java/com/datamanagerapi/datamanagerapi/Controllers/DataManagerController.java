@@ -1,6 +1,5 @@
 package com.datamanagerapi.datamanagerapi.Controllers;
 
-import com.datamanagerapi.datamanagerapi.CommonLogic.CommonApiLogic;
 import com.datamanagerapi.datamanagerapi.DataAccessObjects.InstitutionRepository;
 import com.datamanagerapi.datamanagerapi.Models.Institution;
 import com.datamanagerapi.datamanagerapi.Requests.LoginRequest;
@@ -9,14 +8,14 @@ import com.datamanagerapi.datamanagerapi.Responses.LoginResponse;
 import com.datamanagerapi.datamanagerapi.Responses.RegistrationResponse;
 import com.datamanagerapi.datamanagerapi.services.DataManagerService;
 import com.datamanagerapi.datamanagerapi.services.OnlineEmailValidationService;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.Cacheable;
-
+//import springfox.documentation.annotations.Cacheable;
+import org.springframework.cache.annotation.Cacheable;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @Slf4j
@@ -82,10 +81,17 @@ public class DataManagerController {
     }
 
     @GetMapping(value = "/allInstitutions")
-    @Cacheable("institution-cache")
+    @Cacheable(value="institution-cache")
     public List<Institution> retrieveAllInstitutions()
     {
         return institutionRepository.findAll();
+    }
+
+    @GetMapping(value = "/getInstitutionById/{id}")
+    @Cacheable(value="institution-cache",key="#id")
+    public Optional<Institution> getInstitutionById(@PathVariable(value="id") int id)
+    {
+        return institutionRepository.findById(id);
     }
 
 }
